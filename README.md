@@ -9,7 +9,8 @@ First of all lets take ebextension folder. Their are bunch of scripts:
 
 **03efs-mount.config** - This script helps in creating the mount directory at your created # Elastic FileSystem
 
-> _Make sure your DNS Hostname is enabled for gettinh your EFS FileSystem ID**
+> _Make sure your DNS Hostname is enabled for gettinh your EFS FileSystem ID
+
 > _How to check DNS Hostname enabled--> go to your VPC section in which you are designing your Wordpress--> slect your desired VPC --> under the summary Tab just check that both DNS resolution and DNS hostname are set to "yes", if not then go to action and you will find the edit options_
 
 **04copywp.config**- This script helps to check if Symlink and wp is already installed if not copy it to EFS mount directory
