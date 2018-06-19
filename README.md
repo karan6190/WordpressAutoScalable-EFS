@@ -18,4 +18,5 @@ First of all lets take ebextension folder. Their are bunch of scripts
 
 I have included sample wp.config file also with RDS and Keys values to set them as environment variables, later on modification will be easy, we don't need to ssh every time to changes those values.
 
-**Note- For getting keys values > https://api.wordpress.org/secret-key/1.1/salt/ **
+**Note- For getting keys values:**
+> https://api.wordpress.org/secret-key/1.1/salt/
