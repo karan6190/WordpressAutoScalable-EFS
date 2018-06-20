@@ -26,7 +26,7 @@ First of all lets take **ebextensions folder**. Their are bunch of scripts:
 **Note- For getting keys values:**
 > https://api.wordpress.org/secret-key/1.1/salt/
 
-### Performing Deployment
+## Performing Deployment
 
 1. First of all don't forget to update the RDS value and Wordpress salt keys in wp-config file.
 2. Provide the VPC ID and Subnets in 02-efs-create.config file
