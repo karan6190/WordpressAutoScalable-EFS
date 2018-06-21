@@ -58,10 +58,17 @@ ADD JWT Authentication for WP-API, WP REST API vesion 2 plugins and Disable REST
 >_Make sure you have tick the check box /jwt-auth/v1/ in Disable REST API plugin
 
 **Couldn't find your .htaccess file?** 
+
 Actually .htaccess file is a hidden file and it will create when ever you install any plugin or change the syntax of your post call (Setting -> permalink )
 
 **Don't want to SSH and make some changes to your .htaccess file?** 
+
 Answer to this question is just install **WP Htaccess Editor** plugin from for Add plugin section of the wordpress and can easily make some changes to your .htaccess file.
+
+**Testing JWT Authentication**
+
+You can test this Authentication via Postman. Just fire a post service to url http://IP-ADDRESS/wp-json/jwt-auth/v1/token/ with username and password included in the body section. In responce you will get the JSON token.
+
 
 
 
