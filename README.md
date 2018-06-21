@@ -44,8 +44,24 @@ First of all lets take **ebextensions folder**. Their are bunch of scripts:
 As in Wp-config file I have mentioned
 ```
 define('JWT_AUTH_SECRET_KEY', 'XXXXXXXXXXXXXXXX');
-
 ```
 Just Replace the key salt with the [AUTH_KEY]( https://api.wordpress.org/secret-key/1.1/salt/) salt as obtained
+
+Now you have to make some changes in your .htaccess file (/var/app/current/), add these line to your .htaccess file
+```
+RewriteEngine on
+RewriteCond %{HTTP:Authorization} ^(.*)
+RewriteRule ^(.*) - [E=HTTP_AUTHORIZATION:%1]
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+```
+ADD JWT Authentication for WP-API, WP REST API vesion 2 plugins and Disable REST API from your Wordpress Plugin Section.
+>_Make sure you have tick the check box /jwt-auth/v1/ in Disable REST API plugin
+
+**Couldn't find your .htaccess file?** 
+Actually .htaccess file is a hidden file and it will create when ever you install any plugin or change the syntax of your post call (Setting -> permalink )
+
+**Don't want to SSH and make some changes to your .htaccess file?** 
+Answer to this question is just install **WP Htaccess Editor** plugin from for Add plugin section of the wordpress and can easily make some changes to your .htaccess file.
+
 
 
