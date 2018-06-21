@@ -69,3 +69,29 @@ Answer to this question is just install **WP Htaccess Editor** plugin from for A
 
 You can test this Authentication via Postman. Just fire a POST Request to the url http://IP-ADDRESS/wp-json/jwt-auth/v1/token/ with username and password included in the body section. In responce you will get the JSON token.
 Use this token as a Authentication in the header section and fire a GET Request to the url http://IP_ADDRESS/wp-json/wp/v2/posts/
+
+## Permissions
+Most of the time we face issue regarding proper Permissions of WordPress directory/files. Due to Improper Permissions most of the time we get **could not create directory** while adding new plugin. So to resolve such kind of issues just place this sh file in the root directory of your wordpress and run the file
+
+**fix-wordpress-permissions.sh**
+```
+WP_OWNER=www-data # <-- wordpress owner
+WP_GROUP=www-data # <-- wordpress group
+WP_ROOT=$1 # <-- wordpress root directory
+WS_GROUP=www-data # <-- webserver group
+
+# reset to safe defaults
+find ${WP_ROOT} -exec chown ${WP_OWNER}:${WP_GROUP} {} \;
+find ${WP_ROOT} -type d -exec chmod 755 {} \;
+find ${WP_ROOT} -type f -exec chmod 644 {} \;
+
+# allow wordpress to manage wp-config.php (but prevent world access)
+chgrp ${WS_GROUP} ${WP_ROOT}/wp-config.php
+chmod 660 ${WP_ROOT}/wp-config.php
+
+# allow wordpress to manage wp-content
+find ${WP_ROOT}/wp-content -exec chgrp ${WS_GROUP} {} \;
+find ${WP_ROOT}/wp-content -type d -exec chmod 775 {} \;
+find ${WP_ROOT}/wp-content -type f -exec chmod 664 {} \;
+```
+
