@@ -15,7 +15,7 @@ define('AUTH_SALT',        $_SERVER['AUTH_SALT']);
 define('SECURE_AUTH_SALT', $_SERVER['SECURE_AUTH_SALT']);
 define('LOGGED_IN_SALT',   $_SERVER['LOGGED_IN_SALT']);
 define('NONCE_SALT',       $_SERVER['NONCE_SALT']);
-define('JWT_AUTH_SECRET_KEY', 'hp#UM%<FL@l@f+|[)_$ TID=4C^xXYv 8ju2=l|a:;~fF[^G+}+:>,qA-QT<U-rO');
+define('JWT_AUTH_SECRET_KEY', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 define('FS_METHOD', 'direct');
 $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
