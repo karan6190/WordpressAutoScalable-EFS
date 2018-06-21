@@ -67,8 +67,5 @@ Answer to this question is just install **WP Htaccess Editor** plugin from for A
 
 **Testing JWT Authentication**
 
-You can test this Authentication via Postman. Just fire a post service to url http://IP-ADDRESS/wp-json/jwt-auth/v1/token/ with username and password included in the body section. In responce you will get the JSON token.
-
-
-
-
+You can test this Authentication via Postman. Just fire a POST Request to the url http://IP-ADDRESS/wp-json/jwt-auth/v1/token/ with username and password included in the body section. In responce you will get the JSON token.
+Use this token as a Authentication in the header section and fire a GET Request to the url http://IP_ADDRESS/wp-json/wp/v2/posts/
