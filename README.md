@@ -38,3 +38,14 @@ First of all lets take **ebextensions folder**. Their are bunch of scripts:
 8. create your certificate in certificate manager (its free so always use SSL) and assign it in the beanstalk ELB in the beanstalk console
 9. Log into wordpress using your new URL and change the default site and base url in General setting before enabling multisite
 10. Go to tools > network and enable multsite and follow the instructions provided
+
+## JWT Authentication
+
+As in Wp-config file I have mentioned
+```
+define('JWT_AUTH_SECRET_KEY', 'XXXXXXXXXXXXXXXX');
+
+```
+Just Replace the key salt with the [AUTH_KEY]( https://api.wordpress.org/secret-key/1.1/salt/) salt as obtained
+
+
